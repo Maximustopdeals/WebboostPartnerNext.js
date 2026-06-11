@@ -20,7 +20,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     q: "Wat kost een Next.js website?",
-    a: "Bij WebBoost Partner werk ik met drie heldere pakketten plus een webshop-pakket. Het Starter pakket begint bij €1.495 (excl. btw) voor ZZP'ers die snel professioneel online willen. Het Premium pakket à €2.495 is geschikt voor ondernemers die meer content en lokale SEO nodig hebben. Het Pro pakket à €3.495 bevat een volwaardig SEO-traject met conversieoptimalisatie. Het Webshop pakket start vanaf €6.495 met iDEAL-integratie en productbeheer. Alle pakketten zijn maatwerk in te vullen — een persoonlijke offerte is altijd mogelijk.",
+    a: "Bij WebBoost Partner werk ik met drie heldere pakketten. Het Essential pakket voor ZZP'ers en starters is €2.495 (excl. btw) / €3.019 (incl. btw). Het Professional pakket voor ondernemers met ambitie is €4.495 (excl. btw) / €5.439 (incl. btw). Het Enterprise pakket voor groeiende bedrijven is vanaf €6.995 (excl. btw) / €8.464 (incl. btw) — maatwerk mogelijk. Alle pakketten zijn volledig transparant geprijsd, er zitten geen verborgen kosten in. Een persoonlijke offerte voor maatwerk is altijd mogelijk.",
   },
   {
     q: "Hoe lang duurt het traject?",
@@ -32,7 +32,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Is SEO inbegrepen?",
-    a: "Ja. Technische SEO is bij élke pagina inbegrepen: schema markup, semantische HTML, geoptimaliseerde meta tags, sitemap.xml, robots.txt, Open Graph en correcte heading-structuur. Lokale SEO voor Rotterdam (Google Business Profile koppeling, NAP-consistentie, lokale schema) zit standaard in het Premium pakket en hoger.",
+    a: "Ja. Technische SEO is bij élke pagina inbegrepen: schema markup, semantische HTML, geoptimaliseerde meta tags, sitemap.xml, robots.txt, Open Graph en correcte heading-structuur. Lokale SEO voor Rotterdam (Google Business Profile koppeling, NAP-consistentie, lokale schema) zit standaard in het Professional pakket en hoger.",
   },
   {
     q: "Werk je alleen voor bedrijven in Rotterdam?",
@@ -40,7 +40,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Wat als ik later iets wil aanpassen?",
-    a: "Kleine aanpassingen (tekst, foto's) doe ik tegen een vast uurtarief óf je krijgt toegang tot een headless CMS waarin je zelf content beheert — zonder dat je code aanraakt. Bij het Pro pakket zit drie maanden support inbegrepen voor doorontwikkeling.",
+    a: "Kleine aanpassingen (tekst, foto's) doe ik tegen een vast uurtarief óf je krijgt toegang tot een headless CMS waarin je zelf content beheert — zonder dat je code aanraakt. Bij het Enterprise pakket zit 6 maanden support inbegrepen voor doorontwikkeling.",
   },
 ];
 
