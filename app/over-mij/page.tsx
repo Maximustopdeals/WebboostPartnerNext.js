@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import type { Metadata } from "next";
 
 function NextjsLogoCard() {
   return (
@@ -34,7 +35,7 @@ function NextjsLogoCard() {
   );
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Over mij | Ron — Next.js webbouwer Rotterdam",
   description:
     "Voormalig WordPress-webbouwer, nu Next.js specialist. Ron uit Rotterdam vertelt waarom hij stopte met WordPress en hoe hij websites bouwt die wel werken.",
@@ -184,8 +185,8 @@ export default function OverMijPage() {
 
         <div className="max-w-3xl mx-auto px-4 sm:px-8 mt-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {["Rotterdam","Capelle aan den IJssel","Krimpen aan den IJssel","Ridderkerk","Barendrecht","Schiedam"].map((c) => (
-              <div key={c} className="border-2 border-black bg-[#FAFAFA] p-4 text-center hover:bg-[#FF4500] hover:text-white transition-colors">
+            {["Rotterdam","Capelle aan den IJssel","Krimpen aan den IJssel","Ridderkerk","Barendrecht","Schiedam"].map((c: string, index: number) => (
+              <div key={index} className="border-2 border-black bg-[#FAFAFA] p-4 text-center hover:bg-[#FF4500] hover:text-white transition-colors">
                 <p className="font-heading font-bold uppercase text-sm tracking-tight">{c}</p>
               </div>
             ))}
