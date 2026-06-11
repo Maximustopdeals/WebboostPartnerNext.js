@@ -1,6 +1,7 @@
 import CTASection from "@/components/CTASection";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Next.js Specialist Nederland | Webbouwer voor moderne, snelle sites",
   description:
     "Op zoek naar een Next.js specialist in Nederland? WebBoost Partner bouwt razendsnelle, SEO-geoptimaliseerde Next.js websites voor MKB en groeiende bedrijven.",
