@@ -1,7 +1,20 @@
 import Link from "next/link";
 import { Check, Star, Sparkles } from "lucide-react";
 
-const packages = [
+interface PricingPackage {
+  id: string;
+  name: string;
+  priceExcl: string;
+  priceIncl: string;
+  audience: string;
+  tagline: string;
+  description: string;
+  features: string[];
+  featured: boolean;
+  isCustom?: boolean;
+}
+
+const packages: PricingPackage[] = [
   {
     id: "essential",
     name: "Essential",
@@ -69,7 +82,11 @@ const packages = [
   },
 ];
 
-export default function PricingSection({ compact = false }) {
+interface PricingSectionProps {
+  compact?: boolean;
+}
+
+export default function PricingSection({ compact = false }: PricingSectionProps) {
   return (
     <section className="bg-[#FAFAFA] py-20 sm:py-28" data-testid="pricing-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -89,7 +106,7 @@ export default function PricingSection({ compact = false }) {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {packages.map((pkg) => (
+          {packages.map((pkg: PricingPackage) => (
             <div
               key={pkg.id}
               className={`relative border-2 border-black p-6 flex flex-col transition-all hover:-translate-y-1 ${
@@ -145,7 +162,7 @@ export default function PricingSection({ compact = false }) {
 
               {/* Features list */}
               <ul className="space-y-2 mb-6 flex-1">
-                {pkg.features.map((feature) => (
+                {pkg.features.map((feature: string) => (
                   <li key={feature} className="flex items-start gap-2 text-sm">
                     <Check size={16} strokeWidth={3} className={pkg.featured ? "text-white shrink-0 mt-0.5" : "text-[#FF4500] shrink-0 mt-0.5"} />
                     <span className={pkg.featured ? "text-white/95" : "text-[#1a1a1a]"}>
