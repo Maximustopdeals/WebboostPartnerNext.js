@@ -1,13 +1,20 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "SEO Rotterdam | Lokale SEO, Technische SEO & Core Web Vitals",
   description:
     "SEO Rotterdam: meer klanten via Google met technische SEO, lokale vindbaarheid en Core Web Vitals. WebBoost Partner optimaliseert uw Next.js website voor topposities.",
   alternates: { canonical: "https://webboostpartner.nl/seo-rotterdam" },
 };
+
+interface MetricItem {
+  k: string;
+  v: string;
+  num: string;
+}
 
 export default function SEORotterdamPage() {
   return (
@@ -36,8 +43,8 @@ export default function SEORotterdamPage() {
             { k: "Technische SEO", v: "Schema, sitemap, semantische HTML", num: "100%" },
             { k: "Lokale SEO", v: "Rotterdam + regio focus", num: "Top 3" },
             { k: "Core Web Vitals", v: "LCP, INP, CLS optimalisatie", num: "95+" },
-          ].map((m) => (
-            <div key={m.k} className="border-2 border-black bg-[#FAFAFA] p-8 hover:bg-black hover:text-white transition-colors group">
+          ].map((m: MetricItem, index: number) => (
+            <div key={index} className="border-2 border-black bg-[#FAFAFA] p-8 hover:bg-black hover:text-white transition-colors group">
               <p className="font-mono uppercase text-xs tracking-widest text-[#FF4500] mb-2">{m.k}</p>
               <p className="font-heading font-extrabold text-5xl mb-2 text-[#FF4500] group-hover:text-white">{m.num}</p>
               <p className="text-sm">{m.v}</p>
