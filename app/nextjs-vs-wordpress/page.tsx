@@ -1,6 +1,7 @@
 import CTASection from "@/components/CTASection";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Next.js vs WordPress | Welke is beter voor jouw website in 2026?",
   description:
     "Next.js vs WordPress: een eerlijke vergelijking op snelheid, SEO, veiligheid en onderhoud. Welke past bij jouw bedrijf? Lees de uitgebreide analyse.",
