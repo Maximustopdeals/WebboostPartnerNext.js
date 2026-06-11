@@ -3,13 +3,27 @@
 import { useState } from "react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
-const FALLBACK_ENDPOINT = "https://formspree.io/f/mdapzjod";
+const FALLBACK_ENDPOINT: string = "https://formspree.io/f/mdapzjod";
+
+// Interface voor Field component props
+interface FieldProps {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  testid: string;
+}
+
+interface FormStatus {
+  status: "idle" | "loading" | "success" | "error";
+  errorMsg: string;
+}
 
 export default function ContactForm() {
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
-  const [errorMsg, setErrorMsg] = useState("");
+  const [status, setStatus] = useState<FormStatus["status"]>("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
     setStatus("loading");
     setErrorMsg("");
@@ -48,9 +62,10 @@ export default function ContactForm() {
         setErrorMsg(msg);
         setStatus("error");
       }
-    } catch (err) {
+    } catch (err: unknown) {
       console.error("Fetch error:", err);
-      setErrorMsg("Netwerkfout. Controleer je verbinding of probeer het later opnieuw.");
+      const errorMessage = err instanceof Error ? err.message : "Netwerkfout. Controleer je verbinding of probeer het later opnieuw.";
+      setErrorMsg(errorMessage);
       setStatus("error");
     }
   }
@@ -79,11 +94,11 @@ export default function ContactForm() {
       data-testid="contact-form"
     >
       <div className="grid sm:grid-cols-2 gap-5">
-        <Field label="Naam *" name="naam" required testid="field-naam" />
+        <Field label="Naam *" name="naam" required={true} testid="field-naam" />
         <Field label="Bedrijfsnaam" name="bedrijf" testid="field-bedrijf" />
       </div>
       <div className="grid sm:grid-cols-2 gap-5">
-        <Field label="E-mail *" name="email" type="email" required testid="field-email" />
+        <Field label="E-mail *" name="email" type="email" required={true} testid="field-email" />
         <Field label="Telefoon" name="telefoon" type="tel" testid="field-telefoon" />
       </div>
 
@@ -149,7 +164,7 @@ export default function ContactForm() {
   );
 }
 
-function Field({ label, name, type = "text", required = false, testid }) {
+function Field({ label, name, type = "text", required = false, testid }: FieldProps) {
   return (
     <div>
       <label className="block font-heading uppercase text-xs font-bold tracking-widest mb-2">
