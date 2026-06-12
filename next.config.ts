@@ -8,19 +8,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.webboostpartner.nl",
-          },
-        ],
-        destination: "https://webboostpartner.nl/:path*",
-        permanent: true, // 301 redirect - goed voor SEO
-      },
-    ];
+    return []; // ← Helemaal leeg, geen redirects meer via code
   },
 };
 
